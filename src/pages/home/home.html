@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Profile
+    </ion-title>
+    <ion-buttons end>
+    <button end ion-button icon-only (click)="logoutAlert()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/user.svg">
+      </ion-avatar>
+      <h2>{{name | titlecase}}</h2>
+    </ion-item>
+  
+  
+
+    <ion-list class="details">
+      <ion-item >
+        <ion-label>
+          Gender
+        </ion-label>
+        <ion-note  item-right>{{gender}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Country
+        </ion-label>
+        <ion-note  item-right>{{country}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Language
+        </ion-label>
+        <ion-note  item-right>{{language}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Email
+        </ion-label>
+        <ion-note item-right>{{email}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          DOB
+        </ion-label>
+        <ion-note  item-right>{{dob}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Organ Donor
+        </ion-label>
+        <ion-note   item-right>{{organ_donor}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          User Type
+        </ion-label>
+        <ion-note   item-right>{{userType}}</ion-note>
+      </ion-item>
+    </ion-list>
+  
+  </ion-card>
+  <div>
+      <ion-card-header style="border-bottom: 1px solid gray;border-top: 1px solid gray">
+          <span style="float: left"><strong>User List</strong> </span>
+        </ion-card-header>
+        <ion-item  *ngFor="let item of userList" >
+            <!-- <ion-avatar item-left>
+                <div class="circle"  [ngStyle]="{'background-color':getColor(item.id)}">
+                  <span>{{item.name | initials}}</span>
+                </div>
+              </ion-avatar> -->
+              <div style="margin-left: 4vw" (click)="detailPage(item)"> 
+                  <h2 ion-text color="primary"><strong>{{item.name}}</strong></h2>
+              </div>
+          
+    
+        </ion-item>
+  </div>
+
+ 
+</ion-content>
